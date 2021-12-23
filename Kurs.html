@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Rupiah</title>
+</head>
+<body>
+    <input id="nilaiAwal" type="text" placeholder="Masukkan nilai"
+    onchange="tampilHasil()">
+
+    <select id="valasPilihan" onchange="tampilHasil()">
+        <option value="">Pilih Valasnya</option>
+        <option value="Dollar US">Dollar US</option> 
+        <option value="Dollar Singapore">Dollar Singapore </option>
+        <option value="Ringgit Malaysia">Ringgit Malaysia</option>
+        <option value="Yen Jepang">Yen Jepang</option>
+        <option value="Euro">Euro</option>
+        <option value="Riyal Arab Saud">Riyal Arab Saudi</option>
+    </select>
+
+    <input id="hasil" type="text" placeholder="Hasilnya adalah">
+
+    <script>
+        let valas = ["Dollar US", "Dollar Singapore", "Ringgit Malaysia", "Yen Jepang", "Euro", "Riyal Arab Saudi"]
+        let nilaiAwal = document.getElementById("nilaiAwal")
+        let valasPilihan = document.getElementById("valasPilihan")
+        let hasil = document.getElementById("hasil")
+        let penampungHasil
+        let nf = new Intl.NumberFormat('id-ID');
+        
+        function tampilHasil() {
+
+            if (valasPilihan.value == valas[0]) {
+                penampungHasil = nilaiAwal.value * 9915
+            } else if (valasPilihan.value == valas [1]) {
+                penampungHasil = nilaiAwal.value * 13472
+            } else if (valasPilihan.value == valas [2]) {
+                penampungHasil = nilaiAwal.value * 874
+            } else if (valasPilihan.value == valas [3]) {
+                penampungHasil = nilaiAwal.value * 120
+            } else if (valasPilihan.value == valas [4]) {
+                penampungHasil = nilaiAwal.value * 15888
+            } else if (valasPilihan.value == valas [5]) {
+                penampungHasil = nilaiAwal.value * 3592
+            } else {
+                penampungHasil = nilaiAwal.value * 0
+            }
+
+            hasil.value = "Rp. " + nf.format(penampungHasil);
+        }
+    </script>
+
+
+</body>
+</html>

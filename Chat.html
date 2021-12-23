@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function komentar() {
+            let pesan = document.createElement("P");
+            pesan.innerHTML = String(document.getElementById("komen").value);
+            document.getElementById("chat").appendChild(pesan);
+        }
+    </script>
+</head>
+
+<body>
+    <table border="1" style="width: 30%; height: 300px; border: black solid 1px; border-radius: 10px; margin: auto;">
+        <tr>
+            <td>
+                <div id="chat" style="height: 300px;"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="komen" style="width: 85%;">
+                <button type="button" id="submit" onclick="komentar()">Send</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
